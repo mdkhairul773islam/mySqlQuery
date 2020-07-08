@@ -1,0 +1,20 @@
+1.
+UPDATE
+    products
+JOIN sapitems ON sapitems.product_code = products.product_code
+SET
+    sapitems.purchase_price = products.sale_price
+2.
+SELECT
+    doctors.id,doctors.fullName
+FROM
+    doctors
+JOIN diagnosis ON diagnosis.refereed_doctor = doctors.fullName
+WHERE
+    diagnosis.refereed_doctor != ''
+3.
+UPDATE
+    diagnosis
+JOIN doctors ON doctors.fullName = diagnosis.refereed_doctor
+SET
+    diagnosis.refereed_doctor = doctors.id
